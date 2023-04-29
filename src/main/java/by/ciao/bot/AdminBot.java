@@ -42,7 +42,7 @@ public class AdminBot extends TelegramLongPollingBot {
         return botToken;
     }
 
-    @Scheduled(fixedRateString = "${data_sending_rate}")
+    @Scheduled(cron = "${data_sending_rate}")
     public void callScheduledDataSending() throws IOException {
         sendUserDataToAdmin();
     }
